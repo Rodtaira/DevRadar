@@ -1,14 +1,16 @@
 const express = require('express')
-const mongoose = require('mongoose')
-
+require('./db/mongoose')
 const routes = require('./routes')
 
 const app = express()
 
-app.use(routes)
+const port = process.env.PORT || 3000
+
 app.use(express.json())
+app.use(routes)
 
 
 
-
-app.listen(3333)
+app.listen( port, () => {
+    console.log('Server is running at ' + port)
+})
