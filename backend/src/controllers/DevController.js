@@ -41,9 +41,46 @@ module.exports = {
         }
 
         return res.json({message : "User already registered"})
-        
          
+    }, 
+
+    async update(req, res){
+
+        const updates = Object.keys(req.body)
+        const allowedUpdates = ['name', 'bio', 'location']
+        const isValidOperation = updates.every((update) =>  allowedUpdates.includes(update) )
+
+        if(!isValidOperation){
+            return res.status(400).send({error: 'Invalid updates'})
+        }
+
+ 
+        const developer = await Dev.findById(req.params.id)
+
+        updates.forEach((update) => dev[update] = req.body[update])
+
+        await developer.save()
+
+        if (!developer) {
+            return res.status(404).send()
+        }
+
+        res.send(developer)
+
+
+    }, 
+
+    async destroy(req, res){
+        
+            const developer = await Dev.findByIdAndDelete(req.params.id)
+    
+            if(!developer){
+                return res.status(404).send('Developer not found')
+            }
+    
+            res.json(developer)
     
         
     }
+  
 }

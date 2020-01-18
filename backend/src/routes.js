@@ -8,6 +8,8 @@ const routes = Router()
 
 routes.get('/devs', DevController.index)
 routes.post('/devs', DevController.store_developer)
+routes.patch('/devs/:id', DevController.update)
+routes.delete('/devs/:id', DevController.destroy)
 
 // Search 
 
