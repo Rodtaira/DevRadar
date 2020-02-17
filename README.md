@@ -9,3 +9,5 @@ This is an small web application developed to train the development in the MERN 
 - Install the dependencies with npm install and after all dependecies installed correctly, run the api with: npm run dev or yarn dev.
 - To run the front-end go to the web folder with the command: cd web . 
 - Install the dependencies with npm install and after all dependecies installed, run the front-end with: npm start or yarn start. 
+
+PS: Make sure to be running a mongo database with the command: mongod 
