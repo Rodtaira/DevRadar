@@ -7,6 +7,9 @@ import './Main.css';
 
 
 function App() {
+
+  const [devs, setDevs] = useState([]);
+
   const [github_username, setGitUserName] = useState('');
   const [techs, setTechs] = useState('');  
   const [latitude, setLatitude] = useState(''); 
@@ -29,6 +32,16 @@ function App() {
     )
   }, []); 
 
+  useEffect(() => {
+    async function loadDevs(){
+      const  response = await api.get('/devs'); 
+
+      setDevs(response.data);
+    }
+
+    loadDevs();
+  })
+
   async function handleAddDev(e){
     e.preventDefault(); 
 
@@ -38,7 +51,13 @@ function App() {
       latitude, 
       longitude
     })
+
     console.log(response.data);
+
+    setGitUserName(''); 
+    setTechs(''); 
+    setLatitude(''); 
+    setLongitude(''); 
   }
 
 
@@ -46,7 +65,7 @@ function App() {
     <div id="app">
       <aside>
         <strong > Register</strong>
-        <form>
+        <form onSubmit={handleAddDev} >
           <div className="input-block">
             <label htmlFor="github_username">GitHub Username</label>
             <input 
@@ -94,7 +113,7 @@ function App() {
               /> 
             </div>
           </div>      
-          <button type="submit" onSubmit={handleAddDev} > Save </button>
+          <button type="submit" > Save </button>
         </form>
       </aside>
 

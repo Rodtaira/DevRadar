@@ -13,7 +13,8 @@ module.exports = {
 
         const{github_username, techs, latitude, longitude} = req.body
 
-        let developer = Dev.findOne({github_username})
+        let developer = await Dev.findOne({github_username})
+
 
         if(!developer){
 
