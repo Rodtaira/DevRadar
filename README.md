@@ -4,7 +4,7 @@ This is an small web application developed to train the development in the MERN 
 # How to use this application 
 - git clone this repository
 - Open the terminal and open the folder DevRadar with the command: cd DevRadar 
-- It will can be seen some folders called web and backend 
+- It will be seen some folders called web and backend 
 - To run the back-end Rest API enter the folder backend with the command: cd backend 
 - Install the dependencies with npm install and after all dependecies installed correctly, run the api with: npm run dev or yarn dev
 - To run the front-end go to the web folder with the command: cd web 
