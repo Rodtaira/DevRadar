@@ -1,5 +1,5 @@
 # DevRadar
-This is an small web application developed to train the development in the MERN Stack. This application is a Developer Radar with the purpose to search and register developers.     
+This is a small web application developed to train the development in the MERN Stack. This application is a Developer Radar with the purpose to search and register developers.     
 
 # How to use this application 
 - git clone this repository
